@@ -40,24 +40,18 @@ gcloud config set compute/zone us-east1-d
 
 
 
-# -------- my-cluster-name -------------
-gcloud container clusters create my-cluster-name --num-nodes=1 \
---preemptible \
---enable-autoscaling --max-nodes=5 --min-nodes=1
-
-gcloud container clusters get-credentials my-cluster-name
-
 
 
 gcloud container clusters delete my-cluster-name
 
-# -------- my-celery-cluster -------------
+
 gcloud container clusters create my-celery-cluster --num-nodes=1 \
 --preemptible \
 --enable-autoscaling --max-nodes=5 --min-nodes=1
 
 gcloud container clusters get-credentials my-celery-cluster
-# -------- my-celery-cluster -------------
+
+
 # -f is --filename
 kubectl create -f message_queue/rabbitmq-deployment.yaml
 kubectl create -f message_queue/rabbitmq-service.yaml

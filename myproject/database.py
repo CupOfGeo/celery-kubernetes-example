@@ -44,6 +44,11 @@ def get_task_result(task_id):
             .execute("select finished, result from tasks where id=?", [task_id])
             .fetchone())
 
+def get_task(task_id):
+    return (connect_db()
+            .execute("select * from tasks where id=?", [task_id])
+            .fetchone())
+
 def get_all():
     return (connect_db()
             .execute("select * from tasks order by id asc")
