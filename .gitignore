@@ -2,5 +2,6 @@
 __pycache__
 *.sw[op]
 *.py[oc]
-.env
+*.env
 /venv
+*google_key.json
