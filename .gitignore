@@ -5,3 +5,4 @@ __pycache__
 *.env
 /venv
 *google_key.json
+/BAD_spotify2genius

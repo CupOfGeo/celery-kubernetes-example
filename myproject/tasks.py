@@ -3,6 +3,7 @@ Interface for launching asynchronous Celery tasks.
 """
 import celery
 import lcs.tasks
+
 import spotify2genius.tasks
 
 import database
@@ -26,9 +27,7 @@ def make_celery(app):
 
 def create_s2p_task(user: str, playlist_id: str, project_name: str, debug: bool = False,
                num_threads: int = 4, threshold: int = 5):
-    """
-    Create new async task to compute lcs on str_a and str_b.
-    """
+
 
     task_id = database.create_task()
 

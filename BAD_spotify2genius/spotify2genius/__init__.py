@@ -15,8 +15,8 @@ from google.cloud import storage
 import gc
 
 from dotenv import load_dotenv
-
 load_dotenv()
+
 BUCKET_NAME = 'central-bucket-george'
 
 

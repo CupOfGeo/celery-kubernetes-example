@@ -41,10 +41,6 @@ gcloud config set compute/zone us-east1-d
 
 
 
-
-gcloud container clusters delete my-cluster-name
-
-
 gcloud container clusters create my-celery-cluster --num-nodes=1 \
 --preemptible \
 --enable-autoscaling --max-nodes=5 --min-nodes=1
@@ -63,8 +59,15 @@ kubectl create -f consumer-large/deployment.yaml
 
 kubectl get pods
 
+kubectl delete pods myproject-7bf765f9b-8g5lx
+
+kubectl logs myproject-7bf765f9b-xm4jg  --container myproject
+
+
+
 kubectl port-forward deployment/myproject 5000:5000
 
+kubectl get service myproject-svc
 kubectl get service myproject-svc --output yaml
 kubectl describe services myproject-svc
 
